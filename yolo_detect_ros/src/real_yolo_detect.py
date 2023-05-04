@@ -5,13 +5,17 @@
 #for roslaunch 
 import sys
 import os
-sys.path.append(os.path.abspath(os.path.join(os.getcwd(), os.path.pardir)) + "/forklift_pallet_det/src")
+Workspace_Path = sys.path[0].rsplit('/',2)[0]
+# sys.path.append(os.path.abspath(os.path.join(os.getcwd(), os.path.pardir)) + "/yolo_detect_ws/src")
+sys.path.append(Workspace_Path)
 sys.path.insert(1, '/opt/installer/open_cv/cv_bridge/lib/python3/dist-packages/')
-print(sys.path)
+# print(sys.path)
+# last_path = sys.path[0].rsplit('/',2)[0]
+# print(last_path)
 import cv2
 import time
 # import python.darknet as darknet
-import darknet.darknet as darknet
+import darknet_new.darknet as darknet
 import rospy
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge, CvBridgeError
@@ -22,7 +26,8 @@ COLORS_PINK = (255, 20, 147)
 COLORS = [COLORS_PINK, COLORS_YELLOW]
 
 win_title = 'YOLOv4 test'
-save_result_dir = os.path.abspath(os.path.join(os.getcwd(), os.path.pardir)) + "/forklift_pallet_det/src/yolo_detect_ros/output_video"
+# save_result_dir = os.path.abspath(os.path.join(os.getcwd(), os.path.pardir)) + "/yolo_detect_ws/src/yolo_detect_ros/output_video"
+save_result_dir = Workspace_Path + '/yolo_detect_ros/output_video'
 out_video_name = "real_output.avi"
 if not os.path.exists(save_result_dir):
     os.mkdir(save_result_dir)

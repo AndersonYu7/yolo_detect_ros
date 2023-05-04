@@ -1,0 +1,32 @@
+<launch>
+      <arg name="image" default="/usb_cam/image_raw" />
+      <arg name="color_width"               default="1280"/>
+      <arg name="color_height"              default="720"/>   
+      <!-- Config and weights folder. -->
+      <arg name = "yolo_data_path"             default="$(find yolo_detect_ros)/yolo_network_config/cfg/" />
+      <arg name = "yolo_weights_path"          default="$(find yolo_detect_ros)/yolo_network_config/weights/"/>
+      <arg name = "yolo_config_path"           default="$(find yolo_detect_ros)/yolo_network_config/cfg/"/>
+      
+      <param name="color_width"           value="$(arg color_width)" />
+      <param name="color_height"          value="$(arg color_height)" />
+      <param name="data_path"             value="$(arg yolo_data_path)" />
+      <param name="weights_path"          value="$(arg yolo_weights_path)" />
+      <param name="config_path"           value="$(arg yolo_config_path)" />
+      <param name="image"                 value="$(arg image)" />
+      <rosparam file="$(find yolo_detect_ros)/config/pallet.yaml" command="load" />
+
+      <node pkg = "yolo_detect_ros" 
+            type = "real_yolo_detect.py" 
+            name = "Detect_node" 
+            required="true"
+            output="screen" >
+      </node>
+
+      <node pkg = "yolo_detect_ros" 
+            type = "usb_camera_publisher.py" 
+            name = "usb_cam_publisher" 
+            required="true" 
+            output="screen" >
+      </node>
+
+</launch>

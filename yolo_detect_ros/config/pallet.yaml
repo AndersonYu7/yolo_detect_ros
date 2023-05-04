@@ -1,21 +1,24 @@
 data_file:
   names:
+    - teddy.data
     - pallet_front.data
     - pallet_hole.data
 
 config_file:
   names: 
+    - teddy_4.cfg 
     - pallet_front.cfg
     - pallet_hole.cfg
 
 weights_file:
   names: 
+    - teddy_4_final.weights
     - pallet_front.weights
     - pallet_hole.weights
 
 threshold:
-  value: 0.9
+  value: 0.5
 
 model_num:
-  value: 2
+  value: 1
   
