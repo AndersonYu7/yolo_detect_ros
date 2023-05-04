@@ -12,6 +12,7 @@ from ctypes import *
 import math
 import random
 import os
+import numpy as np
 
 
 class BOX(Structure):
@@ -118,12 +119,25 @@ def print_detections(detections, coordinates=False):
 
 def draw_boxes(detections, image, colors):
     import cv2
-    for label, confidence, bbox in detections:
-        left, top, right, bottom = bbox2points(bbox)
-        cv2.rectangle(image, (left, top), (right, bottom), colors[label], 1)
-        cv2.putText(image, "{} [{:.2f}]".format(label, float(confidence)),
-                    (left, top - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.5,
-                    colors[label], 2)
+    for label, score, bbox in detections:
+        text = label+ ":"+str(score)
+        xmin, ymin, xmax, ymax = bbox2points(bbox)
+        
+        #字體與寬度設定
+        fontFace = cv2.FONT_HERSHEY_COMPLEX
+        fontScale = 0.5
+        font_thickness = 1
+        rect_thickness = 2
+
+        #for text background
+        labelSize = cv2.getTextSize(text, fontFace, fontScale, font_thickness)
+        _x1 = xmin # bottom_left x of text
+        _y1 = ymin # bottom_left y of text
+        _x2 = xmin+labelSize[0][0] # top_right x of text
+        _y2 = ymin-labelSize[0][1] # top_right y of text
+        cv2.rectangle(image, (xmin, ymin), (xmax, ymax), colors[label], rect_thickness)
+        cv2.rectangle(image, (_x1,_y1), (_x2,_y2), colors[label], cv2.FILLED) # text background
+        cv2.putText(image, text, (xmin, ymin - 4), cv2.FONT_HERSHEY_COMPLEX, fontScale, (0,0,0), font_thickness)
     return image
 
 
