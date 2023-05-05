@@ -32,6 +32,8 @@ catkin_make
 * Object Detection -- YOLOv4  
 \* [YOLO_detect](/yolo_detect_ros/README.md)
 
+
+# 其他說明
 ## darknet_new Makefile說明
 1. GPU                  是否開啟GPU
 2. CUDNN,CUDNN_HALF     是否開啟cudnn加速(需安裝)
@@ -43,11 +45,17 @@ catkin_make
 
 ![Screenshot from 2023-05-05 19-34-30](https://user-images.githubusercontent.com/95768254/236451395-3d5e277c-bc53-4ba2-a0b6-624060e5ebd9.png)
 
-## 載入模型
+## 載入新模型
+`cd src/yolo_detect_ros/yolo_network_config/cfg`
+
 將.data .cfg .names 放入yolo_network_config/cfg中
 修改.data的names路徑為[WORKSAPCE_PATH]/src/yolo_detect_ros/yolo_network_config/cfg/[names_file].names
 
+`cd src/yolo_detect_ros/yolo_network_config/weights`
+
 將.weight放入yolo_network_config/weights中
+
+`cd src/yolo_detect_ros/config`
 
 修改config/pallet.yaml
 
