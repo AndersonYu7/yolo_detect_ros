@@ -3,7 +3,7 @@
 # Installation and Setup
 ## Install forklift_pallt
 ```
-mkdir forklift_pallet_det && cd forklift_pallet_det
+mkdir [OWN_WORKSPACE] && cd [OWN_WORKSPACE]
 git clone --recursive https://github.com/uptopia/forklift_pallet_det.git src
 cd src/darknet_new
 ```
@@ -13,6 +13,20 @@ make
 cd ../..
 catkin_make
 ```
+## Setup
+`cd src/yolo_detect_ros/yolo_network_config`
+
+修改.data的names路徑(pallet_front.data and pallet_hole.data)
+* /home/anderson/yolo_detect_ws/src/yolo_detect_ros/yolo_network_config/cfg/pallet_front.names
+
+更改為
+[WORKSAPCE_PATH]/src/yolo_detect_ros/yolo_network_config/cfg/pallet_front.names
+
+* /home/anderson/yolo_detect_ws/src/yolo_detect_ros/yolo_network_config/cfg/pallet_hole.names
+
+更改為
+[WORKSAPCE_PATH]/src/yolo_detect_ros/yolo_network_config/cfg/pallet_hole.names
+
 
 ## module
 * Object Detection -- YOLOv4  
