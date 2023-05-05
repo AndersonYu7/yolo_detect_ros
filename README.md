@@ -25,7 +25,10 @@ catkin_make
 4. OPENMP               是否開啟多核心CPU功能(視電腦是否支援)
 5. LIBSO                開啟可獲得更多進階功能 
 
-建議：全部打開 0-> 1
+建議：全部打開 0-> 1 
+
+![Screenshot from 2023-05-05 19-34-30](https://user-images.githubusercontent.com/95768254/236451395-3d5e277c-bc53-4ba2-a0b6-624060e5ebd9.png)
+
 
 ## ERROR
 /home/robotarm/forklift_pallet_ws/src/darknet_ros/darknet/src/parser.c:39:10: fatal error: version.h: No such file or directory
