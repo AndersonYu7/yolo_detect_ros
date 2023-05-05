@@ -24,6 +24,7 @@ catkin_make
 3. OPENCV               是否開啟opencv(需安裝)
 4. OPENMP               是否開啟多核心CPU功能(視電腦是否支援)
 5. LIBSO                開啟可獲得更多進階功能 
+
 建議：全部打開 0-> 1
 
 ## ERROR
