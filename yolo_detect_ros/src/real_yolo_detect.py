@@ -60,6 +60,21 @@ def load_files():
         cfg_file[i] = cfg_path+cfg_file[i]
         weights_file[i] = weights_path+weights_file[i]
 
+def change_name_file():
+    for i in range(num):
+        f = open(data_file[i], "r")
+        lines = f.read()
+        f = open(data_file[i], "w+")
+        name_path = lines.split('\n')[3].split('=')[1].rsplit('/', 1)
+        name_file = name_path[-1]
+        name_path_change = name_path
+        name_path_change = Workspace_Path +'/yolo_detect_ros/yolo_network_config/cfg/' + name_file
+        lines = lines.split('\n')
+        lines[3] = 'names=' + name_path_change
+        lines = '\n'.join(lines)
+        f.write(lines)
+        f.close()
+
 class Detect_node():
     def __init__(self, cfgfile, weightsfile, datafile):
         rospy.init_node("Detect_node")
@@ -176,4 +191,6 @@ class Detect_node():
 
 if __name__ == '__main__':
     load_files()
+    print("FJKDSHFJKSDHFKJSDF")
+    change_name_file()
     node = Detect_node(cfg_file, weights_file, data_file)

@@ -1,5 +1,5 @@
 classes=1
 train=/home/anderson/YOLO/teddy_4/cfg/traqin.txt
 valid=/home/anderson/YOLO/teddy_4/cfg/val.txt
-names= /home/anderson/Altek_ws/src/yolo_detect_ros/yolo_network_config/cfg/teddy.names
+names=/home/anderson/yolo_detect_ws/src/yolo_detect_ros/yolo_network_config/cfg/teddy.names
 backup=/home/anderson/YOLO/teddy_4/cfg/weights
