@@ -7,7 +7,7 @@ mkdir forklift_pallet_det && cd forklift_pallet_det
 git clone --recursive https://github.com/uptopia/forklift_pallet_det.git src
 cd src/darknet_new
 ```
-修改Makefile如下[Makefile說明](/README.md/darknet_new Makefile說明)
+修改Makefile如下[Makefile說明](README.md#darknet_new-makefile說明)
 ```
 make
 cd ../..
