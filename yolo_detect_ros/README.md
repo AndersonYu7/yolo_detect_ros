@@ -7,7 +7,7 @@
 roslaunch yolo_detect_ros yolo_detect_altek_cam.launch
 ```
 
-## Image Detection 
+## Image Detection in folder
 ```
 cd src/yolo_detect_ros/python
 
