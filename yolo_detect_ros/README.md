@@ -14,7 +14,7 @@ cd src/yolo_detect_ros/python
 python3 image_detect.py [model_num] [data_path] [cfg_path] [weight_path] [data_path2] [cfg_path2] [weight_path2] .... [img_files_path]
 ```
 
-##Video Detection
+## Video Detection
 ```
 cd src/yolo_detect_ros/python
 

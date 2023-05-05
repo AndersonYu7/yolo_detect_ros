@@ -10,3 +10,7 @@ make
 cd ../..
 catkin_make
 ```
+
+## module
+* Object Detection -- YOLOv4  
+\* [YOLO_detect](/yolo_detect_ros/README.md)    
