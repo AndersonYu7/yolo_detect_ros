@@ -11,7 +11,7 @@ roslaunch yolo_detect_ros yolo_detect_altek_cam.launch
 ```
 cd src/yolo_detect_ros/python
 
-python3 image_detect.py [model_num] [data_path] [cfg_path] [weight_path] [data_path2] [cfg_path2] [weight_path2] .... [img_files_path]
+python3 image_detect.py [model_num] [data_path] [cfg_path] [weight_path] [data_path2] [cfg_path2] [weight_path2] .... [img_folder_path]
 ```
 <img src="https://user-images.githubusercontent.com/95768254/236456035-0e73b0a5-d71f-42f1-b5cb-b80b1ca1a7db.jpg" width="640" height="360">
 
