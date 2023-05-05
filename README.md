@@ -6,7 +6,7 @@
 mkdir forklift_pallet_det && cd forklift_pallet_det
 git clone --recursive https://github.com/uptopia/forklift_pallet_det.git src
 cd src/darknet_new
-修改Makefile如下
+修改Makefile如下[Makefile說明](README.md/darknet_new Makefile說明)
 make
 cd ../..
 catkin_make
@@ -21,7 +21,7 @@ catkin_make
 2. CUDNN,CUDNN_HALF     是否開啟cudnn加速(需安裝)
 3. OPENCV               是否開啟opencv(需安裝)
 4. OPENMP               是否開啟多核心CPU功能(視電腦是否支援)
-5. LIBSO                開啟可獲得更多進階功能
+5. LIBSO                開啟可獲得更多進階功能 
 建議：全部打開 0-> 1
 
 ## ERROR
